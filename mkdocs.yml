@@ -1,5 +1,8 @@
 site_name: My Docs
 nav:
-  - 首页: index.md
-  - 测试页: 第三周任务.md
+  - 简介: index.md
+  - C语言: 
+    - 函数指针: c语言/函数指针.md
+  - Linux基础: 
+  - 电机: 
 theme: rtd-dropdown
