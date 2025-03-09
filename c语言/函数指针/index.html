@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>函数指针 - My Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u51fd\u6570\u6307\u9488";
+    var mkdocs_page_input_path = "c\u8bed\u8a00\\\u51fd\u6570\u6307\u9488.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> My Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../..">简介</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">C语言</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        函数指针
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#_1">
+      概念辨析
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#-">函数指针应用-回调函数</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">My Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>C语言 &raquo;</li>
+        
+      
+    
+    <li>函数指针</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">概念辨析</h1>
+<p><strong>函数指针</strong>：一个指向函数的<strong>指针变量</strong>。其实等同于普通指针，只是普通指针指向的是变量的地址，而函数指针指向的是一个函数的地址，一段代码的地址。</p>
+<pre><code class="language-c">/*通过函数指针调用函数*/
+int maxvalue(int a, int b){
+    return a&gt;b ? a : b;
+}
+
+int (*p)(int, int) = NULL;//定义一个与maxValue兼容的指针
+p = maxvalue;
+p(20, 30);
+</code></pre>
+<p><strong>指针函数</strong>：实质是<strong>一个函数</strong>，只是该函数的返回值是一个指针</p>
+<p>定义：<code>int *pfun(int ,int);//返回一个指向整数int的指针</code></p>
+<h2 id="-">函数指针应用-回调函数</h2>
+<p>应用的精髓在于将<strong>函数指针作为一个函数的参数使用</strong>。</p>
+<p>我们先创建一个函数A来实现功能a，再创建一个函数B来实现功能b，当功能b中包含功能a时，可在函数B的参数中加入一个指针（<strong>函数指针</strong>），该指针指向函数A，这样就相当于函数B调用了函数A,不需要再在B中写一段实现功能a的重复代码了，函数A称为回调函数。</p>
+<pre><code class="language-c">/*实现一个函数，将一个整形数组中比50大或小的打印在控制台*/
+BOOL cmpbigger(int number, int set){
+    return number &gt; set;
+}
+BOOL cmpless(int number, int set){
+    return number &lt; set;
+}
+void cmp(int *numarray, int count, int set, BOOL (*p)(int , int)){
+    for(int i = 0; i &lt; count; i++)
+    {
+        if(p(*(numarray + i),set))
+        {
+            printf(&quot;%d\n&quot;,*(numarrey + i));
+        }
+    }
+}
+
+int main() {
+
+    int numarray[5] = {15, 34, 44, 56, 64};
+    int set = 50;
+    // 大于被比较数字情况：
+    cmp(numberArray, 5, compareNumber, cmpbigger);
+    // 小于被比较数字情况：
+    cmp(numberArray, 5, compareNumber, cmpless);
+
+    return 0;
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../.." class="btn btn-neutral" title="简介"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
