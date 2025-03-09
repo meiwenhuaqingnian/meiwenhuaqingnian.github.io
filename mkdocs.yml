@@ -1,0 +1,5 @@
+site_name: My Docs
+nav:
+  - 首页: index.md
+  - 测试页: 第三周任务.md
+theme: rtd-dropdown
