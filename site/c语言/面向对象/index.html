@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>面向对象与面向过程 - My Docs</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">简介</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">C语言</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88/" class="dropdown-item">函数指针</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">面向对象与面向过程</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">面向过程</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">面向对象</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#coop" class="nav-link">c语言实现oop</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_5" class="nav-link">封装</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_6" class="nav-link">继承</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_7" class="nav-link">多态</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="_1">面向对象与面向过程</h1>
+<h2 id="_2">面向过程</h2>
+<p>面向过程是一种以事件为中心的编程思想，编程的时候把解决问题的步骤分析出来，然后用<a href="https://zhida.zhihu.com/search?content_id=3558768&amp;content_type=Article&amp;match_order=1&amp;q=函数&amp;zhida_source=entity">函数</a>把这些步骤实现，<strong>在一步一步的具体步骤中再按顺序调用函数。更偏向于独特性，专门性</strong>。</p>
+<h2 id="_3">面向对象</h2>
+<p>面向对象是一种以“对象”为中心的编程思想，把要解决的问题分解成各个对象。对象是对现实世界中某个具体或抽象事物的抽象表示。每个对象都具有状态（属性）和行为（方法）。状态表示对象的数据，而行为表示对象能够执行的操作。<strong>更偏向于一般性，规律性</strong>。</p>
+<h3 id="_4">核心概念</h3>
+<ol>
+<li><strong>封装（Encapsulation）</strong>：将对象的状态和行为封装在一起，通过限制对内部数据和方法的直接访问，提供了更好的安全性和灵活性。</li>
+<li><strong>继承（Inheritance）</strong>：通过继承机制，一个类可以派生出子类，从而继承父类的属性和方法。继承促进了代码重用和扩展，使得代码更易于维护和扩展。</li>
+<li><strong>多态（Polymorphism）</strong>：多态允许不同的对象对同一个消息做出不同的响应。通过多态，可以编写出更通用、灵活和可扩展的代码。</li>
+<li>多态的概念：通俗来说，就是多种形态，具体点就是去完成某个行为，当不同的对象去完成时会产生出不同的状态。</li>
+</ol>
+<h1 id="coop">c语言实现oop</h1>
+<h2 id="_5">封装</h2>
+<p>封装就是把关于一个对象分散的所有东西（<strong>通常指属性和方法</strong>）集中放在一个整体中（<strong>即类</strong>）。封装的本质是隐藏信息的过程，使对象的内部状态不被外界直接访问和修改。</p>
+<p>c语言中常用<strong>结构体</strong>实现对事物的封装。应掌握函数指针用法</p>
+<pre><code class="language-c">typedef struct human
+{ 
+    int age; 
+    char sex; 
+    void (*set_age)(struct human *p, int age);
+    int (*get_age)(struct human *p);
+    void (*set_sex)(struct human *p, char sex);
+    char (*get_sex)(struct human *p);
+} Human; 
+
+void set_age(Human *p, int age) 
+{ 
+    p-&gt;age = age; 
+} 
+......
+    int main() 
+{ 
+    Human p; 
+    p.set_age = set_age(); 
+    p.set_age(&amp;p, 18); 
+
+    retuen 0;
+}
+</code></pre>
+<h2 id="_6">继承</h2>
+<p>C语言中，可以通过<strong>结构体嵌套</strong>的方式，实现类的继承，但是需要确保父类结构体引用需要放在子类结构体成员的第一个位置（涉及内存对齐问题）。</p>
+<pre><code class="language-c">typedef struct human {
+    int age;
+    char sex;
+} Human;
+
+typedef struct person{
+    Human human;
+    char *name;
+} Person;
+
+Person* create_person(int age, char sex, char *name) {
+    Person* cperson = (Person*) malloc(sizeof(Person));
+    cperson-&gt;human.age = age;
+    cperson-&gt;human.sex = sex;
+    cperson-&gt;name = name;
+    return cperson;
+}
+
+int main() {
+    Person* cperson = create_person(18, 'w', &quot;lucy&quot;);
+    printf(&quot;(%d, %c) - name: %s\n&quot;, cperson-&gt;human.age, cperson-&gt;human.sex, cperson-&gt;name);
+    free(cperson);
+    return 0;
+}
+</code></pre>
+<h2 id="_7">多态</h2>
+<p>C语言中对于多态的实现，我们可以借助<strong>函数指针，通过回调函数</strong>，利用同一的接口处理不同的数据。具有不同功能的函数可以用同一个函数名，这样可以用一个函数名调用不同功能的函数。</p>
+<pre><code class="language-c">typedef struct shape {
+    void (*draw)(void* shape);
+} Shape;
+/*这个结构体可以看作是所有具体形状的抽象基类型，draw 函数指针代表了 “绘制” 这个抽象行为。*/
+
+typedef struct {
+    Shape base;
+    int x;
+    int y;
+    int radius;
+} Circle;
+
+typedef struct {
+    Shape base;
+    int x1;
+    int y1;
+    int x2;
+    int y2;
+} Line;
+/*定义具体类型*/
+
+void drawCircle(void* shape) {
+    Circle* circle = (Circle*)shape;
+    printf(&quot;Circle at (%d,%d) with radius %d\n&quot;, circle-&gt;x, circle-&gt;y, circle-&gt;radius);
+}
+
+void drawLine(void* shape) {
+    Line* line = (Line*)shape;
+    printf(&quot;Line from (%d,%d) to (%d,%d)\n&quot;, line-&gt;x1, line-&gt;y1, line-&gt;x2, line-&gt;y2);
+}
+/*定义具体绘制函数*/
+
+int main() {
+    Circle circle = {
+        .base = { .draw = drawCircle }
+        .x = 1,
+        .y = 5,
+        .radius = 10,
+    };
+
+    Line line = {
+        .base = { .draw = drawLine }
+        .x1 = 2,
+        .y1 = 3,
+        .x2 = 7,
+        .y2 = 9,
+    };
+    /*创建具体形状*/
+
+    Shape* shapes[2];
+    shapes[0] = (Shape*)&amp;circle;
+    shapes[1] = (Shape*)&amp;line;
+
+    for (int i = 0; i &lt; 2; i++) {
+        shapes[i]-&gt;draw(shapes[i]);
+    }
+
+    return 0;
+}
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
