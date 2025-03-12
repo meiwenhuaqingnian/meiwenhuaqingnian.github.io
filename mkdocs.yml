@@ -1,13 +1,10 @@
-site_name: My Docs
+site_name: WHY Docs
+site_url: https://meiwenhuaqingnian.github.io/
+site_author: meiwenhuaqingnian
+
 nav:
   - 简介: index.md
   - C语言: 
     - 函数指针: c语言/函数指针.md
 theme: 
-    name: rtd-dropdown
-    # Default settings
-    collapse_by_default: false
-    highlightjs: true
-    hljs_languages:
-        - yaml
-        - django
+    name: material
